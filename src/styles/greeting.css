@@ -1,0 +1,36 @@
+.greeting {
+  text-align: center;
+  padding: 8px 0 4px;
+}
+
+.greeting-text {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+}
+
+.greeting-name {
+  color: var(--purple-light);
+}
+
+.greeting-clock {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -2px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.greeting-seconds {
+  color: var(--purple-light);
+}
+
+.greeting-date {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}

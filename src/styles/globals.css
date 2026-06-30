@@ -1,0 +1,38 @@
+@import "./tokens.css";
+@import "./topbar.css";
+@import "./greeting.css";
+@import "./layout.css";
+@import "./focus-timer.css";
+@import "./todo.css";
+@import "./quick-links.css";
+@import "./stats.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+  color: inherit;
+}
+
+.dashboard {
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}

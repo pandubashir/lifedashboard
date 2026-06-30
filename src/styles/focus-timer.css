@@ -1,0 +1,217 @@
+.timer-card {
+  background: linear-gradient(160deg, color-mix(in srgb, var(--purple) 18%, var(--bg-card)) 0%, var(--bg-card) 60%);
+  border-color: var(--purple-dim);
+  display: flex;
+  flex-direction: column;
+}
+
+.mode-pill-row {
+  padding: 10px 16px 0;
+}
+
+.mode-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--purple-dim);
+  color: var(--purple-light);
+  border: 0.5px solid var(--purple-dim);
+}
+
+.mode-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--purple-light);
+}
+
+.timer-ring-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0 10px;
+  position: relative;
+}
+
+.timer-svg {
+  transform: rotate(-90deg);
+}
+
+.timer-bg-ring {
+  fill: none;
+  stroke: var(--purple-dim);
+  stroke-width: 5;
+}
+
+.timer-fg-ring {
+  fill: none;
+  stroke: var(--purple-light);
+  stroke-width: 5;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.timer-center {
+  position: absolute;
+  text-align: center;
+}
+
+.timer-display {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+  font-variant-numeric: tabular-nums;
+  display: block;
+}
+
+.timer-sublabel {
+  font-size: 10px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+  margin-top: 2px;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 8px;
+  padding: 0 16px 8px;
+}
+
+.timer-btn {
+  flex: 1;
+  height: 34px;
+  border-radius: 8px;
+  border: 0.5px solid var(--purple-dim);
+  background: var(--purple-dim);
+  color: var(--purple-light);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.timer-btn:hover {
+  background: color-mix(in srgb, var(--purple) 25%, transparent);
+}
+
+.timer-btn-primary {
+  background: var(--purple);
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.timer-btn-primary:hover {
+  background: #6d4fd4;
+}
+
+.timer-duration {
+  padding: 0 16px 16px;
+}
+
+.dur-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.dur-presets {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.dur-btn {
+  flex: 1;
+  height: 28px;
+  background: var(--bg-subtle);
+  border: 0.5px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.dur-btn:hover:not(:disabled) {
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.dur-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.dur-btn.active {
+  background: var(--purple-dim);
+  border-color: var(--purple-light);
+  color: var(--purple-light);
+}
+
+.dur-custom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dur-custom .input {
+  height: 28px;
+  font-size: 12px;
+}
+
+.dur-input-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+}
+
+.dur-set-btn {
+  flex: 0 0 auto;
+  padding: 0 10px;
+}
+
+.timer-sessions {
+  padding: 0 16px 14px;
+}
+
+.sessions-label {
+  font-size: 10px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.session-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.session-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  border: 0.5px solid var(--border);
+}
+
+.session-dot.done {
+  background: var(--purple);
+  border-color: transparent;
+}
