@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useLocalStorage } from "../../hooks/useLocalStorage";
 import type { DailyStats } from "../../types";
+import { playRadarAlarm } from "./alarmSound";
+import { requestNotificationPermission, notifySessionComplete } from "./notifications";
 
 const DEFAULT_MINUTES = 25;
 
@@ -16,6 +18,7 @@ export function useFocusTimer() {
   });
 
   const intervalRef = useRef<number | null>(null);
+  const hasAskedPermission = useRef(false);
 
   const clearTick = useCallback(() => {
     if (intervalRef.current !== null) {
@@ -36,10 +39,16 @@ export function useFocusTimer() {
       sessionsCompleted: prev.sessionsCompleted + 1,
     }));
     setRemainingSec(durationMin * 60);
+    playRadarAlarm();
+    notifySessionComplete(durationMin);
   }, [clearTick, durationMin, setStats]);
 
   const start = useCallback(() => {
     if (running) return;
+    if (!hasAskedPermission.current) {
+      hasAskedPermission.current = true;
+      requestNotificationPermission();
+    }
     setRunning(true);
     intervalRef.current = window.setInterval(() => {
       setRemainingSec((sec) => {

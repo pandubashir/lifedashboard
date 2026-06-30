@@ -49,7 +49,13 @@ export function FocusTimerCard() {
         </span>
       </div>
 
-      <TimerRing progress={progress} label={formatTime(remainingSec)} sublabel={sublabel} />
+      <TimerRing
+        progress={progress}
+        label={formatTime(remainingSec)}
+        sublabel={sublabel}
+        running={running}
+        remainingSec={remainingSec}
+      />
 
       <div className="timer-controls">
         <button type="button" className="timer-btn timer-btn-primary" onClick={toggle}>
