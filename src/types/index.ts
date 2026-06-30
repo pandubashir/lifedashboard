@@ -1,4 +1,4 @@
-export type TodoCategory = "Study" | "Workout" | "Project" | "Personal";
+export type TodoCategory = "Study" | "Workout" | "Project" | "Networking" | "Personal";
 
 export interface Todo {
   id: string;
